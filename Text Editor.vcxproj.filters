@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Polynomial cpp">
+      <UniqueIdentifier>{263b331c-0c8c-4fe1-b56f-7d3fabd6ce8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Polynomial h">
+      <UniqueIdentifier>{ecfd74c0-6a9a-4ed6-b9bc-26292eefe56f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cringeAPI h">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="cringeAPI cpp">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c">
+      <Filter>cringeAPI cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderInterface.cpp">
+      <Filter>cringeAPI cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>cringeAPI cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="WidgetComponent.cpp">
+      <Filter>cringeAPI cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="TextField.cpp">
+      <Filter>cringeAPI cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ClikedInterface.cpp">
+      <Filter>cringeAPI cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>cringeAPI cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>cringeAPI cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Polynomial cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="List.cpp">
+      <Filter>Polynomial cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RenderInterface.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="WidgetComponent.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="TextField.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="ClikedInterface.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBox.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonsDynamic.h">
+      <Filter>cringeAPI h</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Polynomial h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

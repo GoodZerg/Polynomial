@@ -1,0 +1,48 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Text Editor.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Main.cpp
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(15,33): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(16,33): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(17,33): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(18,33): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(19,33): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(21,35): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(22,35): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(23,35): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Text Editor\Main.cpp(24,35): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+  Text Editor.vcxproj -> C:\Users\Nik\source\repos\Text Editor\x64\Debug\CringeAPI.exe
