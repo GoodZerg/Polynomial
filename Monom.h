@@ -20,6 +20,8 @@ public:
 	template<typename T, typename ...Args>
 	void pushToElements(T first, Args... args) noexcept;
 
+	void sortMonom() noexcept;
+
 private:
 
 	int64_t factor;
