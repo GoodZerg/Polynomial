@@ -152,7 +152,6 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ClikedInterface.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="List.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="RenderInterface.cpp" />
     <ClCompile Include="TextBox.cpp" />
@@ -163,9 +162,13 @@
   <ItemGroup>
     <ClInclude Include="Button.h" />
     <ClInclude Include="ButtonsDynamic.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="ClikedInterface.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="Monom.h" />
+    <ClInclude Include="Polynom.h" />
     <ClInclude Include="RenderInterface.h" />
     <ClInclude Include="TextBox.h" />
     <ClInclude Include="TextField.h" />

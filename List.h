@@ -60,6 +60,15 @@ void MyList<T>::instToTail(T* node) noexcept {
 }
 
 template<class T>
-inline void MyList<T>::destroyItemByIndex(const size_t index) noexcept {
-	auto item = this[index];
+void MyList<T>::destroyItemByIndex(const size_t index) noexcept { // хз работает ли???
+	auto item = this->operator[](index);
+	auto _next = item->next;
+	auto _prev = item->prev;
+	if (_prev != nullptr) {
+		item->prev->next = _next;
+	}
+	if (_next != nullptr) {
+		item->next->prev = _prev;
+	}
+	free(item);
 }

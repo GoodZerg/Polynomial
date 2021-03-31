@@ -61,6 +61,5 @@ int main() {
   list.get_size();
   list.instToTail(asd);
   list.instToTail(asda);
-
   return 0;
 }

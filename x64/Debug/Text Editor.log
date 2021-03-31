@@ -1,3 +1,2 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Text Editor.vcxproj).  Это может привести к ошибкам очистки и перестроения.
-LINK : warning LNK4098: библиотека по умолчанию "MSVCRT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
   Text Editor.vcxproj -> C:\Users\Nik\source\repos\Polynomial\x64\Debug\CringeAPI.exe

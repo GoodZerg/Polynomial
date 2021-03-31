@@ -44,9 +44,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Polynomial cpp</Filter>
     </ClCompile>
-    <ClCompile Include="List.cpp">
-      <Filter>Polynomial cpp</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RenderInterface.h">
@@ -77,6 +74,18 @@
       <Filter>cringeAPI h</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
+      <Filter>Polynomial h</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Polynomial h</Filter>
+    </ClInclude>
+    <ClInclude Include="Monom.h">
+      <Filter>Polynomial h</Filter>
+    </ClInclude>
+    <ClInclude Include="Polynom.h">
+      <Filter>Polynomial h</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
       <Filter>Polynomial h</Filter>
     </ClInclude>
   </ItemGroup>
