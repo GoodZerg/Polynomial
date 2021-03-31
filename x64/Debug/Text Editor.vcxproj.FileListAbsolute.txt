@@ -1,3 +1,4 @@
 C:\Users\frela\OneDrive\Документы\GitHub\Text-Editor\x64\Debug\Text Editor.exe
 C:\Users\frela\OneDrive\Документы\GitHub\Text-Editor\x64\Debug\Text Editor.pdb
 C:\Users\Nik\source\repos\Text Editor\x64\Debug\CringeAPI.exe
+C:\Users\Nik\source\repos\Polynomial\x64\Debug\CringeAPI.exe

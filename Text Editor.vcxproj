@@ -75,7 +75,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>C:\Users\frela\OneDrive\Документы\GitHub\Text-Editor\GL\GLFW\lib-vc2019;C:\Users\Nik\source\repos\Text Editor\GL\GLFW\lib-vc2019;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\Nik\source\repos\Polynomial\GL\GLFW\lib-vc2019;C:\Users\frela\OneDrive\Документы\GitHub\Text-Editor\GL\GLFW\lib-vc2019;C:\Users\Nik\source\repos\Text Editor\GL\GLFW\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -103,7 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\frela\OneDrive\Документы\GitHub\Text-Editor\GL\GLFW\include;C:\Users\Nik\source\repos\Text Editor\GL\GLFW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Nik\source\repos\Polynomial\GL\freetype-2.10.4\include;C:\Users\Nik\source\repos\Polynomial\GL\GLFW\include;C:\Users\frela\OneDrive\Документы\GitHub\Text-Editor\GL\GLFW\include;C:\Users\Nik\source\repos\Text Editor\GL\GLFW\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
