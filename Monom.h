@@ -7,49 +7,66 @@
 class Monom {
 public:
 
-	Monom(std::vector<Character*>&, int64_t = 1);
+	Monom(std::vector<CharacterMonom*>&, int64_t = 1);
 
 	template<typename ...Args>
-	Monom(Args..., int64_t = 1);
+	Monom(int64_t = 1, Args&&...);
 
 	~Monom();
 
 	template<typename T>
-	void pushToElements(T first) noexcept;
+	void pushToElements(T&& first) noexcept;
 
 	template<typename T, typename ...Args>
-	void pushToElements(T first, Args... args) noexcept;
+	void pushToElements(T&& first, Args&&... args) noexcept;
 
 	void sortMonom() noexcept;
 
 private:
 
+	bool isNormalized = 0;
+
 	int64_t factor;
 
-	std::vector<Character*> elements;
+	std::vector<CharacterMonom*> elements;
+
+	std::vector<int64_t> elementsAfterNormalize = std::vector<int64_t>(26, 0);
+
+	void normaizeElements();
 };
 
-inline Monom::Monom(std::vector<Character*>& arr, int64_t factor) {
+inline Monom::Monom(std::vector<CharacterMonom*>& arr, int64_t factor) {
 	this->elements = arr;
 	this->factor = factor;
+	
+	this->normaizeElements();
 }
 
 template<typename ...Args>
-inline Monom::Monom(Args... elements, int64_t factor) {
-	pushToElements(elements);
+inline Monom::Monom(int64_t factor, Args&&... elements) {
+	pushToElements(elements...);
 	this->factor = factor;
+
+	this->normaizeElements();
 }
 
 Monom::~Monom() {
 }
 
+inline void Monom::normaizeElements() {
+	for (auto i : this->elements) {
+		this->elementsAfterNormalize[static_cast<int64_t>(i->variable) - 'a'] = i->power;
+	}
+	this->isNormalized = 1;
+}
+
 template<typename T>
-inline void Monom::pushToElements(T first) noexcept {
-	this->elements.push_back(first);
+inline void Monom::pushToElements(T&& first) noexcept {
+	this->elements.push_back(&first);
 }
 
 template<typename T, typename ...Args>
-inline void Monom::pushToElements(T first, Args... args) noexcept {
-	this->elements.push_back(first);
+inline void Monom::pushToElements(T&& first, Args&&... args) noexcept {
+	this->elements.push_back(&first);
 	this->pushToElements(args...);
 }

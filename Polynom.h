@@ -44,5 +44,5 @@ inline void Polynom::pushToNominals(T first) noexcept {
 template<typename T, typename ...Args>
 inline void Polynom::pushToNominals(T first, Args ...args) noexcept {
 	this->nominals.push_back(first);
-	this->pushToElements(args...);
+	this->pushToNominals(args...);
 }

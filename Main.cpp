@@ -3,9 +3,13 @@
 #include "ButtonsDynamic.h"
 
 #include "List.h"
+#include "Polynom.h"
 
 
 int main() {
+
+  Monom a(1, CharacterMonom('a', 2), CharacterMonom('b', 1), CharacterMonom('t', 22), CharacterMonom('s', 12));
+
   /*
   std::string tmp = "Polynomian";
   vec2<unsigned int> size = { 1200, 800 };
