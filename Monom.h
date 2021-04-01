@@ -7,12 +7,18 @@
 class Monom {
 public:
 
-	Monom(std::vector<CharacterMonom*>&, int64_t = 1);
+	Monom(int64_t = 1);
+
+	Monom(std::vector<CharacterMonom*>&&, int64_t = 1);
 
 	template<typename ...Args>
 	Monom(int64_t = 1, Args&&...);
 
 	~Monom();
+
+	int64_t getPowerElementByIndex(int64_t) const noexcept;
+
+	void setPowerElementByCh(CharacterMonom&&) noexcept;
 
 	template<typename T>
 	void pushToElements(T&& first) noexcept;
@@ -21,6 +27,8 @@ public:
 	void pushToElements(T&& first, Args&&... args) noexcept;
 
 	void sortMonom() noexcept;
+
+	friend Monom operator*(const Monom&, const Monom&);
 
 private:
 
@@ -35,7 +43,13 @@ private:
 	void normaizeElements();
 };
 
-inline Monom::Monom(std::vector<CharacterMonom*>& arr, int64_t factor) {
+inline Monom::Monom (int64_t factor) {
+	this->factor = factor;
+
+	this->normaizeElements();
+}
+
+inline Monom::Monom(std::vector<CharacterMonom*>&& arr, int64_t factor) {
 	this->elements = arr;
 	this->factor = factor;
 	
@@ -51,6 +65,14 @@ inline Monom::Monom(int64_t factor, Args&&... elements) {
 }
 
 Monom::~Monom() {
+}
+
+inline int64_t Monom::getPowerElementByIndex(int64_t i) const noexcept {
+	return this->elementsAfterNormalize[i];
+}
+
+inline void Monom::setPowerElementByCh(CharacterMonom&& ch) noexcept {
+	this->elementsAfterNormalize[static_cast<int64_t>(ch.variable) - 'a'] = ch.variable;
 }
 
 inline void Monom::normaizeElements() {
@@ -69,4 +91,15 @@ template<typename T, typename ...Args>
 inline void Monom::pushToElements(T&& first, Args&&... args) noexcept {
 	this->elements.push_back(&first);
 	this->pushToElements(args...);
+}
+
+Monom operator*(const Monom& first, const Monom& second) {
+	Monom* tmp = new Monom();
+	for (size_t i = 0; i < first.elementsAfterNormalize.size(); ++i) {
+		tmp->setPowerElementByCh( CharacterMonom(
+				static_cast<char>(i + 'a'), 
+				first.getPowerElementByIndex(i) + second.getPowerElementByIndex(i)
+			));
+	}
+	return *tmp;
 }
