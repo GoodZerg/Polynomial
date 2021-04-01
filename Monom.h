@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "Character.h"
 
 class Monom {
@@ -40,13 +41,16 @@ private:
 
 	std::vector<int64_t> elementsAfterNormalize = std::vector<int64_t>(26, 0);
 
-	void normaizeElements();
+	std::vector<int64_t> sortedElementIndex;
+
+	void normaizeElements() noexcept;
 };
 
 inline Monom::Monom (int64_t factor) {
 	this->factor = factor;
 
 	this->normaizeElements();
+	this->sortMonom();
 }
 
 inline Monom::Monom(std::vector<CharacterMonom*>&& arr, int64_t factor) {
@@ -54,6 +58,7 @@ inline Monom::Monom(std::vector<CharacterMonom*>&& arr, int64_t factor) {
 	this->factor = factor;
 	
 	this->normaizeElements();
+	this->sortMonom();
 }
 
 template<typename ...Args>
@@ -62,6 +67,7 @@ inline Monom::Monom(int64_t factor, Args&&... elements) {
 	this->factor = factor;
 
 	this->normaizeElements();
+	this->sortMonom();
 }
 
 Monom::~Monom() {
@@ -75,7 +81,25 @@ inline void Monom::setPowerElementByCh(CharacterMonom&& ch) noexcept {
 	this->elementsAfterNormalize[static_cast<int64_t>(ch.variable) - 'a'] = ch.variable;
 }
 
-inline void Monom::normaizeElements() {
+inline void Monom::sortMonom() noexcept {
+	std::vector<vec2<int64_t>> tmp = std::vector<vec2<int64_t>>(26, {0,0});
+	
+	for (int64_t i = 0; i < tmp.size(); i++) {
+		tmp[i] = { i, this->elementsAfterNormalize[i] };
+	}
+
+	std::sort(tmp.begin(), tmp.end(), 
+		[](const vec2<int64_t>& first, const vec2<int64_t>& second) {
+			return first.y > second.y;
+	});
+
+	for (int64_t i = 0; i < tmp.size() && tmp[i].y != 0; i++) {
+		this->sortedElementIndex[i] = tmp[i].y;
+	}
+	return;
+}
+
+inline void Monom::normaizeElements() noexcept {
 	for (auto i : this->elements) {
 		this->elementsAfterNormalize[static_cast<int64_t>(i->variable) - 'a'] = i->power;
 	}
