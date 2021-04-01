@@ -9,16 +9,33 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
+  bool shift = 0;
+  if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
+    shift = 1;
+  }
+
   auto wd = static_cast<Widget*>(glfwGetWindowUserPointer(window));
   if (key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE) {
     glfwSetWindowShouldClose(window, true);
     glfwDestroyWindow(window);
   }
-  if (key >= 32 && key <= 126 && wd->getInput().IsInputing && action == GLFW_PRESS) {
-    //wd->getInput().Input->_text[0]->push_back(key);
-    (*wd->getInput().Input->_text)[wd->getInput().Input->_text->size() - 1]->push_back(key);
+
+  if (key == (6 + '0') && wd->getInput().IsInputing && shift && action == GLFW_PRESS) {
+    (*wd->getInput().Input->_text)[wd->getInput().Input->_text->size() - 1]->push_back('^');
     wd->getInput().Input->rec();
+    return;
   }
+
+  if (key >= 32 && key <= 126 && wd->getInput().IsInputing && action == GLFW_PRESS) {
+    if (!shift && key >= 65 && key <= 90) {
+      (*wd->getInput().Input->_text)[wd->getInput().Input->_text->size() - 1]->push_back(key + 32);
+    } else {
+      (*wd->getInput().Input->_text)[wd->getInput().Input->_text->size() - 1]->push_back(key);
+    }
+    wd->getInput().Input->rec();
+    return;
+  }
+
   if (wd->getInput().IsInputing && action == GLFW_PRESS && key == GLFW_KEY_BACKSPACE) {
     if ((*wd->getInput().Input->_text)[0]->size() > 0) {
       (*wd->getInput().Input->_text)[0]->pop_back();

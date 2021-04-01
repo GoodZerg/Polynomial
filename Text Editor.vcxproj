@@ -104,6 +104,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Nik\source\repos\Polynomial\GL\freetype-2.10.4\include;C:\Users\Nik\source\repos\Polynomial\GL\GLFW\include;C:\Users\frela\OneDrive\Документы\GitHub\Text-Editor\GL\GLFW\include;C:\Users\Nik\source\repos\Text Editor\GL\GLFW\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -150,9 +151,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="ClikedInterface.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Monom.cpp" />
+    <ClCompile Include="Polynom.cpp" />
+    <ClCompile Include="PolynomMainWidget.cpp" />
     <ClCompile Include="RenderInterface.cpp" />
     <ClCompile Include="TextBox.cpp" />
     <ClCompile Include="TextField.cpp" />
@@ -169,6 +174,7 @@
     <ClInclude Include="List.h" />
     <ClInclude Include="Monom.h" />
     <ClInclude Include="Polynom.h" />
+    <ClInclude Include="PolynomMainWidget.h" />
     <ClInclude Include="RenderInterface.h" />
     <ClInclude Include="TextBox.h" />
     <ClInclude Include="TextField.h" />

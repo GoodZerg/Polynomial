@@ -44,6 +44,18 @@
     <ClCompile Include="Main.cpp">
       <Filter>Polynomial cpp</Filter>
     </ClCompile>
+    <ClCompile Include="PolynomMainWidget.cpp">
+      <Filter>Polynomial cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Monom.cpp">
+      <Filter>Polynomial cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Polynom.cpp">
+      <Filter>Polynomial cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Polynomial cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RenderInterface.h">
@@ -70,9 +82,6 @@
     <ClInclude Include="TextBox.h">
       <Filter>cringeAPI h</Filter>
     </ClInclude>
-    <ClInclude Include="ButtonsDynamic.h">
-      <Filter>cringeAPI h</Filter>
-    </ClInclude>
     <ClInclude Include="List.h">
       <Filter>Polynomial h</Filter>
     </ClInclude>
@@ -86,6 +95,12 @@
       <Filter>Polynomial h</Filter>
     </ClInclude>
     <ClInclude Include="InputHandler.h">
+      <Filter>Polynomial h</Filter>
+    </ClInclude>
+    <ClInclude Include="PolynomMainWidget.h">
+      <Filter>Polynomial h</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonsDynamic.h">
       <Filter>Polynomial h</Filter>
     </ClInclude>
   </ItemGroup>

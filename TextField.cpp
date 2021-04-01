@@ -175,14 +175,14 @@ void TextField::render(GLFWwindow* window) {
 
 void TextField::rec() {
   for (int i = 0; i < _text->size(); ++i) {
-    if ((*_text)[i]->size() > 17) {
+    if ((*_text)[i]->size() > stringLenght) {
       if (i + 1 < _text->size()) {
-        (*_text)[i + 1]->insert(0, (*_text)[i]->substr(17));
-        (*_text)[i]->erase(17);
+        (*_text)[i + 1]->insert(0, (*_text)[i]->substr(stringLenght));
+        (*_text)[i]->erase(stringLenght);
       }
       else {
-        _text->push_back(new std::string((*_text)[i]->substr(17)));
-        (*_text)[i]->erase(17);
+        _text->push_back(new std::string((*_text)[i]->substr(stringLenght)));
+        (*_text)[i]->erase(stringLenght);
       }
     }
   }

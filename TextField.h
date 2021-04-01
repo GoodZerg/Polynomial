@@ -18,6 +18,7 @@ public:
   void dec(GLFWwindow* window);
   int shaderProgramText;
 private:
+  int64_t stringLenght = 30;
   vec3<float> textColor;
   std::map<char, Character> _Characters;
   unsigned int VAO_, VBO_;

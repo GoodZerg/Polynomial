@@ -1,28 +1,39 @@
-#include "Header.h"
-#include "Widget.h"
-#include "ButtonsDynamic.h"
-
-#include "List.h"
-#include "Polynom.h"
+#include "PolynomMainWidget.h"
 
 
 int main() {
 
-  Monom a(1, CharacterMonom('a', 2), CharacterMonom('b', 1), CharacterMonom('t', 22), CharacterMonom('s', 12));
+  Monom a(1, CharacterMonom('a', 2), CharacterMonom('b', 1), CharacterMonom('t', 22));
+  Monom b(1, CharacterMonom('b', 2), CharacterMonom('c', 1), CharacterMonom('d', 22));
+  Monom c(1, CharacterMonom('c', 1));
+
+  Polynom abc( b, c);
+
+
+  // std::string tmp = "Polynomian";
+  //std::vector<WidgetComponent*> components;
+  //vec2<unsigned int> window_size = { 1200, 800 };
+  PolynomMainWidget Window({ 1200, 800 }, "Polynomian", new  std::vector<WidgetComponent*>);
 
   /*
+  vec2<float> textfield_size = { 0.75f, 1.5f };
+  components.push_back(new TextField({ -1, -0.5 }, textfield_size, new std::vector <std::string*>{}));
+  */
+  Window.render();
+  glfwTerminate();
+  /*
   std::string tmp = "Polynomian";
-  vec2<unsigned int> size = { 1200, 800 };
+  
   vec2<float> vec1 = { -1, -1 };
   
-  vec2<float> textfield_size = { 1.5, 2.0 };
+  
   vec2<float> vec4 = { 0.5, 0.8 };
   vec2<float> vec5 = { 0.5, 0.2 };
   vec2<float> vec13 = { 0.5, -0.8 };
   vec2<float> vec14 = { 0.5, -1 };
   std::string str = "text";
   std::string strr = "text dvazdi";
-  std::vector<WidgetComponent*> a;
+ 
   Widget test(size, "123", &a);
   std::string str1 = "HIHIHIHIHIIHIHIHIHIH";
 

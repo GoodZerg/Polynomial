@@ -2,6 +2,10 @@
 
 #include "Monom.h"
 
+
+template<typename... Args>
+std::string __stdcall toString(Args&&... args) noexcept;
+
 class Polynom {
 public:
 
@@ -18,31 +22,33 @@ public:
 	template<typename T, typename ...Args>
 	void pushToNominals(T&& first, Args&&... args) noexcept;
 
+	std::string polynomReade;
+
 private:
 
-	std::vector<Monom*> nominals;
+	MyList<Monom> nominals;
 };
-
-inline Polynom::Polynom(std::vector<Monom*>& arr) {
-	this->nominals = arr;
-}
 
 template<typename ...Args>
 inline Polynom::Polynom(Args&&... args) {
 	this->pushToNominals(args...);
 }
 
-Polynom::~Polynom()
-{
-}
-
 template<typename T>
 inline void Polynom::pushToNominals(T&& first) noexcept {
-	this->nominals.push_back(&first);
+	this->nominals.instToTail(&first);
 }
+
 
 template<typename T, typename ...Args>
 inline void Polynom::pushToNominals(T&& first, Args&&... args) noexcept {
-	this->nominals.push_back(&first);
+	this->nominals.instToTail(&first);
 	this->pushToNominals(args...);
+}
+
+template<typename ...Args>
+std::string __stdcall toString(Args && ...args) noexcept {
+	std::ostringstream oss;
+	(oss << ... << std::forward<Args>(args));
+	return oss.str();
 }
