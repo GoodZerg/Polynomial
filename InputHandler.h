@@ -9,6 +9,10 @@ public:
 
 	~InputHandler();
 
+	void check(std::string* str);
+
+	bool is_valid = 1;
+
 	Polynom* pol;
 
 	std::string *str;
@@ -25,7 +29,7 @@ private:
 	void thirdState(int64_t i);
 	void fourthState(int64_t i);
 	void fithState(int64_t i, char& a, std::string& pow);
-	[[noreturn]] void cring();
+  void cring();
 
 
 	int64_t num = 0;

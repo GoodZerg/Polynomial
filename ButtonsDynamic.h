@@ -1,6 +1,7 @@
 #pragma once
 #include "Header.h"
 #include "Widget.h"
+#include "InputHandler.h"
 
 
 void CloseWindow(GLFWwindow* window);
@@ -26,7 +27,15 @@ inline void Save(GLFWwindow* window) {
 }
 
 inline void AddPolynom(GLFWwindow* window) {
-
+  TextBox* tb = dynamic_cast<TextBox*>((static_cast<PolynomMainWidget*>(glfwGetWindowUserPointer(window))->getWidgetComponent())->at(10));
+  std::string ans;
+  for (int64_t i = 0;i < tb->_text->size();++i) {
+    ans += *tb->_text->at(i);
+  }
+  InputHandler ih(&ans);
+  if (ih.is_valid) {
+    static_cast<PolynomMainWidget*>(glfwGetWindowUserPointer(window))->polynoms.instToTail(ih.pol);
+  }
 }
 
 inline void Differencial(GLFWwindow* window) {
