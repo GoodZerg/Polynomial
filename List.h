@@ -8,7 +8,7 @@ public:
 
 	T& operator[] (const size_t) noexcept;
 
-	void instToTail(T*) noexcept;
+	void instToTail(T&) noexcept;
 
 	void destroyItemByIndex(const size_t) noexcept;
 
@@ -44,19 +44,20 @@ T& MyList<T>::operator[](const size_t index) noexcept {
 	Node<T>* tmp = this->head;
 	for (size_t ii = 0; tmp != nullptr; ++ii, tmp = tmp->next) {
 		if (ii == index)
-			return tmp->field;
+			return tmp->data;
 	}
 }
 
 template<class T>
-void MyList<T>::instToTail(T* node) noexcept {
+void MyList<T>::instToTail(T& node) noexcept {
 	if (this->head == nullptr) {
-		head = tail = new Node<T>(*node);
+		head = tail = new Node<T>(node);
 	} else {
-		tail->next = new Node<T>(*node);
+		tail->next = new Node<T>(node);
 		tail->next->prev = tail;
 		tail = tail->next;
 	}
+	++size;
 }
 
 template<class T>
@@ -71,4 +72,5 @@ void MyList<T>::destroyItemByIndex(const size_t index) noexcept { // хз работает
 		item->next->prev = _prev;
 	}
 	free(item);
+	--size;
 }

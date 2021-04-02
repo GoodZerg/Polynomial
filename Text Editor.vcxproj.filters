@@ -56,6 +56,9 @@
     <ClCompile Include="Character.cpp">
       <Filter>Polynomial cpp</Filter>
     </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>Polynomial cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RenderInterface.h">

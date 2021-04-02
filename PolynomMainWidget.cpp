@@ -29,7 +29,7 @@ PolynomMainWidget::PolynomMainWidget(vec2<unsigned int> size, std::string name_w
 
   // take diffirencial
   components->push_back(new TextBox({ -0.10,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 12
-  components->push_back(new TextField({ 0.1,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("d") }));        // 13
+  components->push_back(new TextField({ 0.1,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("    d") }));    // 13
   components->push_back(new TextBox({ 0.3,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("") }));           // 14
   components->push_back(new Button({ 0.5,  0.85 }, subbuttom_size, Differencial, button_color,                                         // 15
     new TextField({ 0.5,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("ok") })
@@ -40,4 +40,44 @@ PolynomMainWidget::PolynomMainWidget(vec2<unsigned int> size, std::string name_w
   components->push_back(new Button({ -0.10,  -0.70 }, subbuttom_size, Save, button_color,                                              // 17
     new TextField({ -0.10,  -0.70 }, subbuttom_size, new std::vector <std::string*>{ new std::string("save") })));
 
+  // point namber
+  components->push_back(new TextBox({ -0.10,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 18
+  components->push_back(new TextField({ 0.1,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("    p=") }));   // 19
+  components->push_back(new TextBox({ 0.3,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("point") }));      // 20
+  components->push_back(new Button({ 0.5,  0.65 }, subbuttom_size, PointNumber, button_color,                                          // 21
+    new TextField({ 0.5,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("ok") })
+  ));
+
+  // sum
+  components->push_back(new TextBox({ -0.10,  0.45 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 22
+  components->push_back(new TextField({ 0.1,  0.45 }, subbuttom_size, new std::vector <std::string*>{ new std::string("     +") }));   // 23
+  components->push_back(new TextBox({ 0.3,  0.45 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));        // 24
+  components->push_back(new Button({ 0.5,  0.45 }, subbuttom_size, Sum, button_color,                                                  // 25
+    new TextField({ 0.5,  0.45 }, subbuttom_size, new std::vector <std::string*>{ new std::string("ok") })
+  ));
+
+  // multiply
+  components->push_back(new TextBox({ -0.10,  0.25 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 26
+  components->push_back(new TextField({ 0.1,  0.25 }, subbuttom_size, new std::vector <std::string*>{ new std::string("     *") }));   // 27
+  components->push_back(new TextBox({ 0.3,  0.25 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));        // 28
+  components->push_back(new Button({ 0.5,  0.25 }, subbuttom_size, Multiply, button_color,                                             // 29
+    new TextField({ 0.5,  0.25 }, subbuttom_size, new std::vector <std::string*>{ new std::string("ok") })
+  ));
+
+  // Division
+  components->push_back(new TextBox({ -0.10,  0.05 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 30
+  components->push_back(new TextField({ 0.1,  0.05 }, subbuttom_size, new std::vector <std::string*>{ new std::string("     /") }));   // 31
+  components->push_back(new TextBox({ 0.3,  0.05 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));        // 32
+  components->push_back(new Button({ 0.5,  0.05 }, subbuttom_size, Div, button_color,                                                  // 33
+    new TextField({ 0.5,  0.05 }, subbuttom_size, new std::vector <std::string*>{ new std::string("ok") })
+  ));
+  components->push_back(new TextField({ -0.10, -0.15 }, textfield_size, new std::vector <std::string*>{ new std::string("mod") }));    // 34
+
+   // Solutions
+  components->push_back(new TextBox({ -0.10,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 35
+  components->push_back(new TextField({ 0.1,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("     x") }));   // 36
+  components->push_back(new TextBox({ 0.3, -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));         // 37
+  components->push_back(new Button({ 0.5,  -0.35 }, subbuttom_size, Div, button_color,                                                  // 38
+    new TextField({ 0.5,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("ok") })
+  ));
 }

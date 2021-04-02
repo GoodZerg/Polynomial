@@ -7,7 +7,7 @@ public:
 
 	Monom(int64_t = 1);
 
-	Monom(std::vector<CharacterMonom*>&&, int64_t = 1);
+	Monom(std::vector<CharacterMonom*>&, int64_t = 1);
 
 	template<typename ...Args>
 	Monom(int64_t = 1, Args&&...);
@@ -17,6 +17,8 @@ public:
 	int64_t getPowerElementByIndex(int64_t) const noexcept;
 
 	void setPowerElementByCh(CharacterMonom&&) noexcept;
+
+	int64_t getSeniorCoefficient() noexcept;
 
 	template<typename T>
 	void pushToElements(T&& first) noexcept;
@@ -36,9 +38,9 @@ private:
 
 	std::vector<CharacterMonom*> elements;
 
-	std::vector<int64_t> elementsAfterNormalize = std::vector<int64_t>(52, 0);
+	std::vector<int64_t> elementsAfterNormalize = std::vector<int64_t>(26, 0);
 
-	std::vector<int64_t> sortedElementIndex     = std::vector<int64_t>(52, 0);
+	std::vector<int64_t> sortedElementIndex     = std::vector<int64_t>(26, 0);
 
 	void normaizeElements() noexcept;
 };
