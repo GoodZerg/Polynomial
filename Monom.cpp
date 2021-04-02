@@ -24,6 +24,11 @@ inline int64_t Monom::getPowerElementByIndex(int64_t i) const noexcept {
 	return this->elementsAfterNormalize[i];
 }
 
+int64_t Monom::getFactor() noexcept
+{
+	return factor;
+}
+
 inline void Monom::setPowerElementByCh(CharacterMonom&& ch) noexcept {
 	this->elementsAfterNormalize[static_cast<int64_t>(ch.variable) - 'a'] = ch.variable;
 }

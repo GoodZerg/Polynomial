@@ -2,7 +2,7 @@
 
 InputHandler::InputHandler(std::string* str) {
   this->str = str;
-  check(str);
+  this->pol = new Polynom();
 }
 
 InputHandler::~InputHandler() {
@@ -13,7 +13,7 @@ void InputHandler::check(std::string* str) {
   this->pol = new Polynom();
   try {
     startState(0);
-  }catch (int a) {
+  } catch (int a) {
     std::cout << "hihihiihih\n";
     is_valid = 0;
   }

@@ -16,6 +16,8 @@ public:
 
 	int64_t getPowerElementByIndex(int64_t) const noexcept;
 
+	int64_t getFactor() noexcept;
+
 	void setPowerElementByCh(CharacterMonom&&) noexcept;
 
 	int64_t getSeniorCoefficient() noexcept;
@@ -28,7 +30,12 @@ public:
 
 	void sortMonom() noexcept;
 
+
+
 	friend Monom operator*(const Monom&, const Monom&);
+
+
+	std::vector<int64_t> sortedElementIndex = std::vector<int64_t>(26, -1);
 
 private:
 
@@ -40,7 +47,7 @@ private:
 
 	std::vector<int64_t> elementsAfterNormalize = std::vector<int64_t>(26, 0);
 
-	std::vector<int64_t> sortedElementIndex     = std::vector<int64_t>(26, 0);
+
 
 	void normaizeElements() noexcept;
 };

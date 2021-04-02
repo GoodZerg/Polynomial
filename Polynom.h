@@ -4,7 +4,7 @@
 
 
 template<typename... Args>
-std::string __stdcall toString(Args&&... args) noexcept;
+std::string toString(Args&&... args) noexcept;
 
 class Polynom {
 public:
@@ -27,7 +27,9 @@ public:
 	template<typename T, typename ...Args>
 	void pushToNominals(T&& first, Args&&... args) noexcept;
 
-	std::string polynomReade;
+	void makeString() noexcept;
+
+	std::string *polynomReade = new std::string("");
 
 	void sort();
 
@@ -42,18 +44,18 @@ private:
 template<typename T>
 inline Polynom::Polynom(T&& argw) {
 	this->pushToNominals(&argw);
-	this->sort();
 }
 
 template<typename ...Args>
 inline Polynom::Polynom(Args&&... args) {
 	this->pushToNominals(args...);
-	this->sort();
 }
 
 template<typename T>
 inline void Polynom::pushToNominals(T&& first) noexcept {
 	this->nominals->instToTail(first);
+	this->sort();
+	this->makeString();
 }
 
 
@@ -61,11 +63,7 @@ template<typename T, typename ...Args>
 inline void Polynom::pushToNominals(T&& first, Args&&... args) noexcept {
 	this->nominals->instToTail(&first);
 	this->pushToNominals(args...);
+	this->sort();
+	this->makeString();
 }
 
-template<typename ...Args>
-std::string __stdcall toString(Args && ...args) noexcept {
-	std::ostringstream oss;
-	(oss << ... << std::forward<Args>(args));
-	return oss.str();
-}
