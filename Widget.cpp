@@ -26,6 +26,12 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     return;
   }
 
+  if (key == '=' && wd->getInput().IsInputing && shift && action == GLFW_PRESS) {
+    (*wd->getInput().Input->_text)[wd->getInput().Input->_text->size() - 1]->push_back('+');
+    wd->getInput().Input->rec();
+    return;
+  }
+
   if (key >= 32 && key <= 126 && wd->getInput().IsInputing && action == GLFW_PRESS) {
     if (!shift && key >= 65 && key <= 90) {
       (*wd->getInput().Input->_text)[wd->getInput().Input->_text->size() - 1]->push_back(key + 32);

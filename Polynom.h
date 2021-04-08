@@ -33,6 +33,8 @@ public:
 
 	void sort();
 
+	void normalize();
+
 private:
 
 	MyList<Monom*> *nominals = new MyList<Monom*>();

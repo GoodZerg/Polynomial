@@ -52,6 +52,7 @@ template<class T>
 void MyList<T>::instToTail(T& node) noexcept {
 	if (this->head == nullptr) {
 		head = tail = new Node<T>(node);
+		size = 0;
 	} else {
 		tail->next = new Node<T>(node);
 		tail->next->prev = tail;

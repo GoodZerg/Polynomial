@@ -29,12 +29,16 @@ int64_t Monom::getFactor() noexcept
 	return factor;
 }
 
+void Monom::setFactor(int64_t num) noexcept {
+	factor = num;
+}
+
 inline void Monom::setPowerElementByCh(CharacterMonom&& ch) noexcept {
 	this->elementsAfterNormalize[static_cast<int64_t>(ch.variable) - 'a'] = ch.variable;
 }
 
 int64_t Monom::getSeniorCoefficient() noexcept {
-	return this->elementsAfterNormalize[this->sortedElementIndex[0]];
+	return this->elementsAfterNormalize[this->sortedElementIndex[0] == -1 ? 0 : this->sortedElementIndex[0]];
 }
 
 inline void Monom::sortMonom() noexcept {

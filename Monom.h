@@ -18,6 +18,8 @@ public:
 
 	int64_t getFactor() noexcept;
 
+	void setFactor(int64_t) noexcept;
+
 	void setPowerElementByCh(CharacterMonom&&) noexcept;
 
 	int64_t getSeniorCoefficient() noexcept;
@@ -46,7 +48,6 @@ private:
 	std::vector<CharacterMonom*> elements;
 
 	std::vector<int64_t> elementsAfterNormalize = std::vector<int64_t>(26, 0);
-
 
 
 	void normaizeElements() noexcept;

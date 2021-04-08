@@ -1,5 +1,23 @@
 #include"InputHandler.h"
 
+#define MAKEMONOM \
+num += num == 0;\
+std::vector<CharacterMonom*> vec;\
+for (size_t i = 0; i < arr.size(); i++) {\
+  if (arr[i] != 0) {\
+    vec.push_back(new CharacterMonom(i + 'a', arr[i]));\
+  }\
+}\
+Monom* jj = new Monom(vec, (sign ? -1 : 1) * num);\
+pol->pushToNominals(jj);\
+sign = str->at(i) == '-' ? true : false;\
+arr = std::vector<int64_t>(26, 0);\
+num = 0;\
+
+
+
+
+
 InputHandler::InputHandler(std::string* str) {
   this->str = str;
   this->pol = new Polynom();
@@ -44,32 +62,24 @@ bool InputHandler::isPower(int64_t i) {
 void InputHandler::startState(int64_t i) {
   if (isChar(i)) {
     ++arr[str->at(i) - 'a'];
-    if (str->size() - 1 > i + 1) {
+    if (str->size() > i + 1) {
       secondState(i + 1);
     } else {
-      num += num == 0;
-      std::vector<CharacterMonom*> vec;
-      for (size_t i = 0; i < arr.size(); i++) {
-        if (arr[i] != 0) {
-          vec.push_back(new CharacterMonom(i + 'a', arr[i]));
-        }
-      }
-      Monom* jj = new Monom(vec, (sign ? -1 : 1) * num);
-      pol->pushToNominals(jj);
-      sign = str->at(i) == '-' ? true : false;
-      arr = std::vector<int64_t>(26, 0);
-      num = 0;
+      MAKEMONOM;
     }
 
   } else if (isInt(i)) {
     num *= 10;
     num += str->at(i) - '0';
-    if (str->size() > i + 1)
-    thirdState(i + 1);
+    if (str->size() > i + 1) {
+      thirdState(i + 1);
+    } else {
+      MAKEMONOM;
+    }
   } else if (isSign(i)) {
     sign = str->at(i) == '-' ? true : false;
     if (str->size()> i + 1)
-    firstState(i + 1);
+      firstState(i + 1);
   } else {
     throw 2;
   }
@@ -78,13 +88,19 @@ void InputHandler::startState(int64_t i) {
 void InputHandler::firstState(int64_t i) {
   if (isChar(i)) {
     ++arr[str->at(i) - 'a'];
-    if (str->size() > i + 1)
-    secondState(i + 1);
+    if (str->size() > i + 1) {
+      secondState(i + 1);
+    } else {
+      MAKEMONOM;
+    }
   } else if (isInt(i)) {
     num *= 10;
     num += str->at(i) - '0';
-    if (str->size() > i + 1)
-    thirdState(i + 1);
+    if (str->size() > i + 1) {
+     thirdState(i + 1);
+    } else {
+      MAKEMONOM;
+    }
   } else {
     throw 2;
   }
@@ -96,36 +112,18 @@ void InputHandler::secondState(int64_t i) {
     if (str->size() > i + 1) {
       secondState(i + 1);
     } else {
-      num += num == 0;
-      std::vector<CharacterMonom*> vec;
-      for (size_t i = 0; i < arr.size(); i++) {
-        if (arr[i] != 0) {
-          vec.push_back(new CharacterMonom(i + 'a', arr[i]));
-        }
-      }
-      Monom* jj = new Monom(vec, (sign ? -1 : 1) * num);
-      pol->pushToNominals(jj);
-      sign = str->at(i) == '-' ? true : false;
-      arr = std::vector<int64_t>(26, 0);
-      num = 0;
+      MAKEMONOM;
     }
   } else if (isPower(i)) {
     --arr[str->at(i - 1) - 'a'];
-    if (str->size() > i + 1)
-    fourthState(i + 1);
-  } else if (isSign(i)) {
-    num += num == 0;
-    std::vector<CharacterMonom*> vec;
-    for (size_t i = 0; i < arr.size(); i++) {
-      if (arr[i] != 0) {
-        vec.push_back(new CharacterMonom(i + 'a', arr[i]));
-      }
+    if (str->size() > i + 1) {
+      fourthState(i + 1);
+    } else {
+      throw 2;
     }
-    Monom *jj = new Monom(vec, (sign ? -1 : 1) * num);
-    pol->pushToNominals(jj);
+  } else if (isSign(i)) { 
+    MAKEMONOM;
     sign = str->at(i) == '-' ? true : false;
-    arr = std::vector<int64_t>(26, 0);
-    num = 0;
     if (str->size()> i + 1)
     firstState(i + 1);
   } else {
@@ -136,28 +134,24 @@ void InputHandler::secondState(int64_t i) {
 void InputHandler::thirdState(int64_t i) {
   if (isChar(i)) {
     ++arr[str->at(i) - 'a'];
-    if (str->size() > i + 1)
-    secondState(i + 1);
+    if (str->size() > i + 1) {
+      secondState(i + 1);
+    } else {
+      MAKEMONOM;
+    }
   } else if (isInt(i)) {
     num *= 10;
     num += str->at(i) - '0';
-    if (str->size() > i + 1)
-    thirdState(i + 1);
-  } else if (isSign(i)) {
-    num += num == 0;
-    std::vector<CharacterMonom*> vec;
-    for (size_t i = 0; i < arr.size(); i++) {
-      if (arr[i] != 0) {
-        vec.push_back(new CharacterMonom(i + 'a', arr[i]));
-      }
+    if (str->size() > i + 1) {
+      thirdState(i + 1);
+    } else {
+      MAKEMONOM;
     }
-    Monom* jj = new Monom(vec, (sign ? -1 : 1) * num);
-    pol->pushToNominals(jj);
+  } else if (isSign(i)) {
+    MAKEMONOM;
     sign = str->at(i) == '-' ? true : false;
-    arr = std::vector<int64_t>(26, 0);
-    num = 0;
     if (str->size() > i + 1)
-    firstState(i + 1);
+      firstState(i + 1);
   } else {
     throw 2;
   }
@@ -171,17 +165,7 @@ void InputHandler::fourthState(int64_t i) {
       fithState(i + 1, str->at(i - 2), asd);
     } else {
       arr[str->at(i - 2) - 'a'] += std::stoi(asd);
-      num += num == 0;
-      std::vector<CharacterMonom*> vec;
-      for (size_t i = 0; i < arr.size(); i++) {
-        if (arr[i] != 0) {
-          vec.push_back(new CharacterMonom(i + 'a', arr[i]));
-        }
-      }
-      Monom* jj = new Monom(vec, (sign ? -1 : 1) * num);
-      pol->pushToNominals(jj);
-      arr = std::vector<int64_t>(26, 0);
-      num = 0;
+      MAKEMONOM;
     }
   } else {
     throw 2;
@@ -191,45 +175,27 @@ void InputHandler::fourthState(int64_t i) {
 void InputHandler::fithState(int64_t i, char& a, std::string& pow) {
   if (isInt(i)) {
     pow += str->at(i); //////////////////////////////////
-    if (str->size() > i + 1)
-    fithState(i + 1, a , pow);
+    if (str->size() > i + 1) {
+      fithState(i + 1, a, pow);
+    } else {
+      arr[a - 'a'] += std::stoi(pow);
+      MAKEMONOM;
+    }
   } else if (isChar(i)) {
     //arr[a - 'a']--;
     arr[a - 'a'] += std::stoi(pow);
     ++arr[str->at(i) - 'a'];
     if (str->size() > i + 1) {
       secondState(i + 1);
-    }
-    else {
-      num += num == 0;
-      std::vector<CharacterMonom*> vec;
-      for (size_t i = 0; i < arr.size(); i++) {
-        if (arr[i] != 0) {
-          vec.push_back(new CharacterMonom(i + 'a', arr[i]));
-        }
-      }
-      Monom* jj = new Monom(vec, (sign ? -1 : 1) * num);
-      pol->pushToNominals(jj);
-      sign = str->at(i) == '-' ? true : false;
-      arr = std::vector<int64_t>(26, 0);
-      num = 0;
+    } else {
+      MAKEMONOM;
     }
   } else if (isSign(i)) {
     arr[a - 'a'] += std::stoi(pow);
-    num += num == 0;
-    std::vector<CharacterMonom*> vec;
-    for (size_t i = 0; i < arr.size(); i++) {
-      if (arr[i] != 0) {
-        vec.push_back(new CharacterMonom(i + 'a', arr[i]));
-      }
-    }
-    Monom* jj = new Monom(vec, (sign ? -1 : 1) * num);
-    pol->pushToNominals(jj);
+    MAKEMONOM;
     sign = str->at(i) == '-' ? true : false;
-    arr = std::vector<int64_t>(26, 0);
-    num = 0;
-    if (str->size() - 1 > i + 1)
-    firstState(i + 1);
+    if (str->size() > i + 1)
+      firstState(i + 1);
   } else {
     throw 2;
   }

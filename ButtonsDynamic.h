@@ -36,6 +36,8 @@ inline void AddPolynom(GLFWwindow* window) {
   if (ans != "") {
     ih.check(&ans);
     if (ih.is_valid) {
+      ih.pol->normalize();
+      ih.pol->makeString();
       static_cast<PolynomMainWidget*>(glfwGetWindowUserPointer(window))->polynoms.instToTail(ih.pol);
     }
   }

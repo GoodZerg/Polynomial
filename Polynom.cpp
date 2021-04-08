@@ -37,7 +37,14 @@ void Polynom::sort() {
 			}
 		}
 	}
-}																		 
+}
+
+void Polynom::normalize() {
+	int64_t seniorFactor = nominals->operator[](0)->getFactor();
+	for (size_t i = 0; i < nominals->get_size(); i++) {
+		nominals->operator[](i)->setFactor(nominals->operator[](i)->getFactor()/seniorFactor);
+	}
+}
 
 
 template<typename ...Args>
