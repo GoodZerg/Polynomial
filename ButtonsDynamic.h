@@ -48,11 +48,11 @@ inline void AddPolynom(GLFWwindow* window) {
   //static_cast<PolynomMainWidget*>(glfwGetWindowUserPointer(window))->polynoms[0];
   //std::cout << "asd\n";
   
-  for (size_t i = 0; i < wid->polynoms.get_size() && i < 10; i++) {
+  for (size_t i = 9; (9  - i)< wid->polynoms.get_size() && i >= 0; i--) {
     std::vector<std::string*>* stttr = new std::vector<std::string*>(2, new std::string());
-      std::string* ss = new std::string(std::to_string(i + 1));
+      std::string* ss = new std::string(std::to_string(10 - i));
       stttr->operator[](0) = ss;
-      stttr->operator[](1) = wid->polynoms[i]->polynomReade;
+      stttr->operator[](1) = wid->polynoms[9-i]->polynomReade;
      
       dynamic_cast<TextField*>(wid->getWidgetComponent()->at(i))->_text = stttr;
   }

@@ -44,8 +44,23 @@ bool InputHandler::isPower(int64_t i) {
 void InputHandler::startState(int64_t i) {
   if (isChar(i)) {
     ++arr[str->at(i) - 'a'];
-    if(str->size() - 1 > i + 1)
-    secondState(i + 1);
+    if (str->size() - 1 > i + 1) {
+      secondState(i + 1);
+    } else {
+      num += num == 0;
+      std::vector<CharacterMonom*> vec;
+      for (size_t i = 0; i < arr.size(); i++) {
+        if (arr[i] != 0) {
+          vec.push_back(new CharacterMonom(i + 'a', arr[i]));
+        }
+      }
+      Monom* jj = new Monom(vec, (sign ? -1 : 1) * num);
+      pol->pushToNominals(jj);
+      sign = str->at(i) == '-' ? true : false;
+      arr = std::vector<int64_t>(26, 0);
+      num = 0;
+    }
+
   } else if (isInt(i)) {
     num *= 10;
     num += str->at(i) - '0';
@@ -80,8 +95,7 @@ void InputHandler::secondState(int64_t i) {
     ++arr[str->at(i) - 'a'];
     if (str->size() > i + 1) {
       secondState(i + 1);
-    }
-    else {
+    } else {
       num += num == 0;
       std::vector<CharacterMonom*> vec;
       for (size_t i = 0; i < arr.size(); i++) {
