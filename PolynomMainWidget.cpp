@@ -10,7 +10,7 @@ PolynomMainWidget::PolynomMainWidget(vec2<unsigned int> size, std::string name_w
   vec3<float> button_color = { 0.878f, 0.250f, 0.984f };
 
   // data base
-  components->push_back(new TextField({ -1, -0.50 }, textfield_size, new std::vector <std::string*>{ new std::string("10") }));          // 0
+  components->push_back(new TextField({ -1, -0.50 }, textfield_size, new std::vector <std::string*>{ new std::string("10") }));         // 0
   components->push_back(new TextField({ -1, -0.35 }, textfield_size, new std::vector <std::string*>{ new std::string("9") }));          // 1
   components->push_back(new TextField({ -1, -0.20 }, textfield_size, new std::vector <std::string*>{ new std::string("8") }));          // 2
   components->push_back(new TextField({ -1, -0.05 }, textfield_size, new std::vector <std::string*>{ new std::string("7") }));          // 3
@@ -19,7 +19,7 @@ PolynomMainWidget::PolynomMainWidget(vec2<unsigned int> size, std::string name_w
   components->push_back(new TextField({ -1,  0.40 }, textfield_size, new std::vector <std::string*>{ new std::string("4") }));          // 6
   components->push_back(new TextField({ -1,  0.55 }, textfield_size, new std::vector <std::string*>{ new std::string("3") }));          // 7  
   components->push_back(new TextField({ -1,  0.70 }, textfield_size, new std::vector <std::string*>{ new std::string("2") }));          // 8
-  components->push_back(new TextField({ -1,  0.85 }, textfield_size, new std::vector <std::string*>{ new std::string("1") }));         // 9
+  components->push_back(new TextField({ -1,  0.85 }, textfield_size, new std::vector <std::string*>{ new std::string("1") }));          // 9
 
   // input polynom
   components->push_back(new TextBox({ -1.00,  -1.00 }, textfield_size, new std::vector <std::string*>{ new std::string("polynom") }));  // 10
