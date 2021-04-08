@@ -99,8 +99,8 @@ void Widget::render(GLFWwindow* window)
   while (!glfwWindowShouldClose(_window))
   {
 
-    // Рендеринг
-    glClearColor(0.819f, 0.768f, 0.913f, 1.0f);
+    
+    glClearColor(1.f, 1.f, 1.f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     for (auto& a : *_components) {
@@ -108,7 +108,7 @@ void Widget::render(GLFWwindow* window)
     }
 
 
-    // glfw: обмен содержимым front- и back- буферов. Отслеживание событий Ввода\Вывода (была ли нажата/отпущена кнопка, перемещен курсор мыши и т.п.)
+    
     glfwSwapBuffers(_window);
     glfwPollEvents();
   }

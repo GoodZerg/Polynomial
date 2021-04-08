@@ -4,6 +4,7 @@ TextField::TextField(vec2<float> pos, vec2<float> size, std::vector<std::string*
   vec3<float> textColor, vec3<float> color, WidgetComponent* Decorator)
   : WidgetComponent(pos, size, color, Decorator)
 {
+  this->textColor = textColor;
   this->_text = str;
 
   // make Character to 
@@ -190,7 +191,7 @@ void TextField::rec() {
 
 void TextField::dec(GLFWwindow* window)
 {
-  _renderText(0.4, vec3<float>(0.129f, 0.129f, 0.129f), window);
+  _renderText(0.4, textColor, window);
 }
 
 void TextField::_renderText(float scale, vec3<float> color, GLFWwindow* window)

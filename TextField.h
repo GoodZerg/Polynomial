@@ -10,8 +10,8 @@ class TextField :
    public WidgetComponent
 {
 public:
-  TextField(vec2<float> pos, vec2<float> size, std::vector<std::string*>* str, vec3<float> textColor = { 0.129f, 0.129f, 0.129f },
-    vec3<float> color = { 0.403f, 0.227f, 0.717f }, WidgetComponent* Decorator = nullptr);
+  TextField(vec2<float> pos, vec2<float> size, std::vector<std::string*>* str, vec3<float> textColor = { 1.f, 1.f, 1.f },
+    vec3<float> color = { 0.26f, 0.26f, 0.26f }, WidgetComponent* Decorator = nullptr);
   void render(GLFWwindow* window);
   std::vector<std::string*> *_text;
   void rec();
