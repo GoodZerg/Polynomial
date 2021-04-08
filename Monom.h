@@ -32,7 +32,7 @@ public:
 
 	void sortMonom() noexcept;
 
-
+	std::vector<CharacterMonom*> getElements();
 
 	friend Monom operator*(const Monom&, const Monom&);
 

@@ -35,6 +35,10 @@ public:
 
 	void normalize();
 
+	MyList<Monom*>* getNominals();
+
+	friend Polynom operator+(const Polynom&, const Polynom&);
+
 private:
 
 	MyList<Monom*> *nominals = new MyList<Monom*>();

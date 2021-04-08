@@ -42,7 +42,7 @@ PolynomMainWidget::PolynomMainWidget(vec2<unsigned int> size, std::string name_w
 
   // point namber
   components->push_back(new TextBox({ -0.10,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 18
-  components->push_back(new TextField({ 0.1,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("    p=") }));   // 19
+  components->push_back(new TextField({ 0.1,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("    x=") }));   // 19
   components->push_back(new TextBox({ 0.3,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("point") }));      // 20
   components->push_back(new Button({ 0.5,  0.65 }, subbuttom_size, PointNumber, button_color,                                          // 21
     new TextField({ 0.5,  0.65 }, subbuttom_size, new std::vector <std::string*>{ new std::string("ok") })
@@ -76,8 +76,8 @@ PolynomMainWidget::PolynomMainWidget(vec2<unsigned int> size, std::string name_w
    // Solutions
   components->push_back(new TextBox({ -0.10,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 35
   components->push_back(new TextField({ 0.1,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("     x") }));   // 36
-  components->push_back(new TextBox({ 0.3, -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));         // 37
-  components->push_back(new Button({ 0.5,  -0.35 }, subbuttom_size, Div, button_color,                                                  // 38
+  components->push_back(new TextBox({ 0.3, -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("var") }));         // 37
+  components->push_back(new Button({ 0.5,  -0.35 }, subbuttom_size, Solve, button_color,                                                  // 38
     new TextField({ 0.5,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("ok") })
   ));
 }

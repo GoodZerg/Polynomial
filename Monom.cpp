@@ -59,6 +59,11 @@ inline void Monom::sortMonom() noexcept {
 	return;
 }
 
+std::vector<CharacterMonom*> Monom::getElements()
+{
+	return elements;
+}
+
 inline void Monom::normaizeElements() noexcept {
 	for (auto i : this->elements) {
 		this->elementsAfterNormalize[static_cast<int64_t>(i->variable) - 'a'] = i->power;
@@ -74,5 +79,8 @@ Monom operator*(const Monom& first, const Monom& second) {
 			first.getPowerElementByIndex(i) + second.getPowerElementByIndex(i)
 		));
 	}
+	tmp->setFactor(first.factor * second.factor);
+	tmp->normaizeElements();
+	tmp->sortMonom();
 	return *tmp;
 }
