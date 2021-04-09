@@ -30,7 +30,7 @@ PolynomMainWidget::PolynomMainWidget(vec2<unsigned int> size, std::string name_w
   // take diffirencial
   components->push_back(new TextBox({ -0.10,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 12
   components->push_back(new TextField({ 0.1,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("    d") }));    // 13
-  components->push_back(new TextBox({ 0.3,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("") }));           // 14
+  components->push_back(new TextBox({ 0.3,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("var") }));       // 14
   components->push_back(new Button({ 0.5,  0.85 }, subbuttom_size, Differencial, button_color,                                         // 15
     new TextField({ 0.5,  0.85 }, subbuttom_size, new std::vector <std::string*>{ new std::string("   ok") })
   ));
@@ -77,7 +77,14 @@ PolynomMainWidget::PolynomMainWidget(vec2<unsigned int> size, std::string name_w
   components->push_back(new TextBox({ -0.10,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 35
   components->push_back(new TextField({ 0.1,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("     x") }));   // 36
   components->push_back(new TextBox({ 0.3, -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("var") }));         // 37
-  components->push_back(new Button({ 0.5,  -0.35 }, subbuttom_size, Solve, button_color,                                                  // 38
+  components->push_back(new Button({ 0.5,  -0.35 }, subbuttom_size, Solve, button_color,                                                // 38
     new TextField({ 0.5,  -0.35 }, subbuttom_size, new std::vector <std::string*>{ new std::string("   ok") })
+  ));
+
+
+  //delete
+  components->push_back(new TextBox({ -0.10,  -0.55 }, subbuttom_size, new std::vector <std::string*>{ new std::string("num") }));      // 39
+  components->push_back(new Button({ 0.1,  -0.55 }, subbuttom_size, Delete, button_color,                                                // 40
+    new TextField({ 0.1,  -0.55 }, subbuttom_size, new std::vector <std::string*>{ new std::string("   del") })
   ));
 }

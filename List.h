@@ -77,6 +77,6 @@ void MyList<T>::destroyItemByIndex(const size_t index) noexcept { // хз работает
 	if (_next != nullptr) {
 		item->next->prev = _prev;
 	}
-	free(item);
 	--size;
+	free(item);
 }

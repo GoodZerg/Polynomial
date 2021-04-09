@@ -12,6 +12,7 @@ void Sum(GLFWwindow* window);
 void Multiply(GLFWwindow* window);
 void Div(GLFWwindow* window);
 void Solve(GLFWwindow* window);
+void Delete(GLFWwindow* window);
 
 
 Polynom* answer = nullptr;
@@ -346,4 +347,36 @@ inline void Solve(GLFWwindow* window) {
 
   answer = nullptr;
   dynamic_cast<TextField*>((wid->getWidgetComponent())->at(16))->_text->at(0) = answerr;
+}
+
+inline void Delete(GLFWwindow* window) {
+  PolynomMainWidget* wid = static_cast<PolynomMainWidget*>(glfwGetWindowUserPointer(window));
+  TextBox* tb = dynamic_cast<TextBox*>((static_cast<PolynomMainWidget*>(glfwGetWindowUserPointer(window))->getWidgetComponent())->at(39));
+  std::string ans;
+  for (int64_t i = 0; i < tb->_text->size(); ++i) {
+    ans += *tb->_text->at(i);
+  }
+
+  int64_t index = std::stoi(ans);
+  index--;
+  if(index < wid->polynoms.get_size())
+   wid->polynoms.destroyItemByIndex(index);
+
+  for (size_t i = 9; (9 - i) < 10 && i >= 0; i--) {
+    std::vector<std::string*>* stttr = new std::vector<std::string*>(2, new std::string());
+    stttr->operator[](0) = (dynamic_cast<TextField*>(wid->getWidgetComponent()->at(i))->_text)->at(0);
+    stttr->operator[](1) = new std::string("");
+
+    dynamic_cast<TextField*>(wid->getWidgetComponent()->at(i))->_text = stttr;
+
+  }
+
+  for (size_t i = 9; (9 - i) < wid->polynoms.get_size() && i >= 0; i--) {
+    std::vector<std::string*>* stttr = new std::vector<std::string*>(2, new std::string());
+    std::string* ss = new std::string(" " + std::to_string(10 - i));
+    stttr->operator[](0) = ss;
+    stttr->operator[](1) = wid->polynoms[9 - i]->polynomReade;
+
+    dynamic_cast<TextField*>(wid->getWidgetComponent()->at(i))->_text = stttr;
+  }
 }
