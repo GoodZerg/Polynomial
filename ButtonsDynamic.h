@@ -32,7 +32,7 @@ inline void Save(GLFWwindow* window) {
     static_cast<PolynomMainWidget*>(glfwGetWindowUserPointer(window))->polynoms.instToTail(ans);
     for (size_t i = 9; (9 - i) < wid->polynoms.get_size() && i >= 0; i--) {
       std::vector<std::string*>* stttr = new std::vector<std::string*>(2, new std::string());
-      std::string* ss = new std::string(std::to_string(10 - i));
+      std::string* ss = new std::string(" " + std::to_string(10 - i));
       stttr->operator[](0) = ss;
       stttr->operator[](1) = wid->polynoms[9 - i]->polynomReade;
 
@@ -68,7 +68,7 @@ inline void AddPolynom(GLFWwindow* window) {
   
   for (size_t i = 9; (9  - i)< wid->polynoms.get_size() && i >= 0; i--) {
     std::vector<std::string*>* stttr = new std::vector<std::string*>(2, new std::string());
-      std::string* ss = new std::string(std::to_string(10 - i));
+      std::string* ss = new std::string(" " + std::to_string(10 - i));
       stttr->operator[](0) = ss;
       stttr->operator[](1) = wid->polynoms[9-i]->polynomReade;
      
@@ -113,7 +113,6 @@ inline void Differencial(GLFWwindow* window) {
           tmp_factor *= ch->power;
           ch->power--;
           f = 1;
-          break;
         }
       }
       if (f) {
@@ -203,22 +202,92 @@ inline void Multiply(GLFWwindow* window) {
   int64_t second_pol_num_int = std::stoi(second_pol_num);
   second_pol_num_int--;
 
-  Polynom* firts = wid->polynoms[first_pol_num_int];
+  Polynom* first = wid->polynoms[first_pol_num_int];
   Polynom* second = wid->polynoms[second_pol_num_int];
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Polynom* answ = new Polynom();
+
+  for (size_t i = 0; i < first->getNominals()->get_size(); i++) {
+    for (size_t j = 0; j < second->getNominals()->get_size(); j++) {
+      std::vector<CharacterMonom*> ch_vec;
+
+      for (size_t ii = 0; ii < first->getNominals()->operator[](i)->getElements().size(); ii++) {
+        ch_vec.push_back(new CharacterMonom(*first->getNominals()->operator[](i)->getElements()[ii]));
+      }
+
+      for (size_t ii = 0; ii < second->getNominals()->operator[](j)->getElements().size(); ii++) {
+        ch_vec.push_back(new CharacterMonom(*second->getNominals()->operator[](j)->getElements()[ii]));
+      }
+
+      answ->pushToNominals(new Monom(
+        ch_vec,
+
+        first->getNominals()->operator[](i)->getFactor() *
+        second->getNominals()->operator[](j)->getFactor()
+      ));
+
+    }
+  }
+
+  answ->sort();
+  answ->normalize();
+  answ->makeString();
+
+  for (size_t i = 0; i < answ->getNominals()->get_size(); i++) {
+    for (size_t j = i + 1; j < answ->getNominals()->get_size(); j++) {
+
+      bool f = 1;
+      for (size_t ii = 0; ii < 26; ++ii) {
+        if (answ->getNominals()->operator[](i)->getPowerElementByIndex(ii) !=
+          answ->getNominals()->operator[](j)->getPowerElementByIndex(ii)) {
+          f = 0;
+          break;
+        }
+      }
+      if (f) {
+        answ->getNominals()->operator[](i)->setFactor(answ->getNominals()->operator[](i)->getFactor() + answ->getNominals()->operator[](j)->getFactor());
+        answ->getNominals()->destroyItemByIndex(j);
+        if (answ->getNominals()->operator[](i)->getFactor() == 0) {
+          answ->getNominals()->destroyItemByIndex(i);
+          i--;
+          break;
+        }
+        j--;
+      }
+
+    } 
+  }
+
+  answ->sort();
+  answ->normalize();
+  answ->makeString();
+
+
+  if (answ->getNominals()->get_size() != 0) {
+    answ->makeString();
+    answer = answ;
+    dynamic_cast<TextField*>((wid->getWidgetComponent())->at(16))->_text->at(0) = answ->polynomReade;
+  }
 }
 
 inline void Div(GLFWwindow* window)
 {
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  ////ahhahhahhahahahahahhahahaaaaaaaaaaaaaaaaaaaaaaaaaahahahahahhahahahhhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
 }
 
 inline void Solve(GLFWwindow* window) {
@@ -245,23 +314,19 @@ inline void Solve(GLFWwindow* window) {
 
   int64_t x = wid->polynoms[pol_num_int]->getNominals()->operator[](wid->polynoms[pol_num_int]->getNominals()->get_size() - 1)->getFactor();
 
-  std::string* answerr = new std::string("");
+  std::string* answerr = new std::string(" ");
 
-  if (wid->polynoms[pol_num_int]->getNominals()->operator[](wid->polynoms[pol_num_int]->getNominals()->get_size() - 1)->
-    getPowerElementByIndex(var_ch - 'a') != 0) {
-    *answerr += " 0";
-  }
-
-  
 
   std::vector<int64_t> factors;
 
+  factors.push_back(0);
   factors.push_back(1);
   factors.push_back(-1);
 
   for (int64_t i = 2; i <= std::sqrt(x); i++) {
     while (x % i == 0) {
       factors.push_back(i);
+      factors.push_back(-1*i);
       x /= i;
     }
   }

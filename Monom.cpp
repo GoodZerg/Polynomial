@@ -65,6 +65,19 @@ std::vector<CharacterMonom*> Monom::getElements()
 }
 
 inline void Monom::normaizeElements() noexcept {
+	std::vector<CharacterMonom*> arr;
+	for (size_t i = 0; i < this->elements.size(); i++) {
+		if(this->elements[i]->variable != '/')
+			arr.push_back(this->elements[i]);
+		for (size_t j = i+1; j < this->elements.size(); j++) {
+			if (this->elements[i]->variable != '/' && this->elements[j]->variable != '/' && this->elements[i]->variable == this->elements[j]->variable) {
+				arr[i]->power += this->elements[j]->power;
+				this->elements[j]->variable = '/';
+			}
+		}
+
+	}
+	this->elements = arr;
 	for (auto i : this->elements) {
 		this->elementsAfterNormalize[static_cast<int64_t>(i->variable) - 'a'] = i->power;
 	}
