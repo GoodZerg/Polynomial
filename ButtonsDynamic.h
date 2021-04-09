@@ -323,16 +323,11 @@ inline void Solve(GLFWwindow* window) {
   factors.push_back(1);
   factors.push_back(-1);
 
-  for (int64_t i = 2; i <= std::sqrt(x); i++) {
-    while (x % i == 0) {
+  for (int64_t i = 2; i <= std::abs(x); i++) {
+    if (x % i == 0) {
       factors.push_back(i);
-      factors.push_back(-1*i);
-      x /= i;
+      factors.push_back(-1 * i);
     }
-  }
-
-  if (x != 1) {
-    factors.push_back(x);
   }
 
   Polynom* num = wid->polynoms[pol_num_int];
