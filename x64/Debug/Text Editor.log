@@ -1,2 +1,302 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Text Editor.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Text Editor.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Button.cpp
+  Character.cpp
+  ClikedInterface.cpp
+  InputHandler.cpp
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(34,16): warning C4101: a: неиспользованная локальная переменная
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(65,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(68,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(74,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(77,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(81,20): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(91,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(94,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(99,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(102,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(112,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(115,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(119,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(125,5): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(127,20): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(137,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(140,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(145,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(148,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(151,5): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(153,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(164,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(168,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(178,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(182,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(188,21): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(191,7): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(195,5): warning C4267: аргумент: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\InputHandler.cpp(197,21): warning C4018: >: несоответствие типов со знаком и без знака
+  Main.cpp
+  Monom.cpp
+C:\Users\Nik\source\repos\Polynomial\Monom.cpp(47,24): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\Monom.cpp(56,24): warning C4018: <: несоответствие типов со знаком и без знака
+  Polynom.cpp
+C:\Users\Nik\source\repos\Polynomial\Polynom.cpp(4,24): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\Polynom.cpp(24,59): warning C4244: аргумент: преобразование "_Ty" в "_Elem", возможна потеря данных
+          with
+          [
+              _Ty=int64_t
+          ]
+          and
+          [
+              _Elem=char
+          ]
+  PolynomMainWidget.cpp
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(49,24): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(87,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(90,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(102,86): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(137,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(140,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(150,45): warning C4244: +=: преобразование "double" в "int64_t", возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(162,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(165,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(193,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(196,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(299,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(302,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(340,47): warning C4244: +=: преобразование "double" в "int64_t", возможна потеря данных
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(356,25): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\ButtonsDynamic.h(362,12): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(14,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(15,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(16,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(17,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(19,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(20,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(21,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(22,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(28,3): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(28,4): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(31,128): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(32,130): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(33,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(36,3): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(36,4): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(41,113): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(41,114): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(44,128): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(45,131): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(46,128): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(49,3): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(49,4): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(52,128): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(53,131): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(54,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(57,3): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(57,4): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(60,128): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(61,131): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(62,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(68,128): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(69,131): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(70,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(73,3): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(73,4): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(74,130): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(77,129): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(78,132): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(79,126): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(82,3): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(82,4): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(86,129): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(89,3): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Nik\source\repos\Polynomial\PolynomMainWidget.cpp(89,4): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+  RenderInterface.cpp
+  TextBox.cpp
+  TextField.cpp
+C:\Users\Nik\source\repos\Polynomial\TextField.cpp(64,29): warning C4838: Преобразование из "FT_Pos" в "unsigned int" требует сужающего преобразования.
+C:\Users\Nik\source\repos\Polynomial\TextField.cpp(172,37): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\Nik\source\repos\Polynomial\TextField.cpp(179,29): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\Polynomial\TextField.cpp(194,37): warning C4305: аргумент: усечение из "double" в "float"
+  Widget.cpp
+  WidgetComponent.cpp
+  Создание кода...
+C:\Users\Nik\source\repos\Polynomial\List.h(49): warning C4715: MyList<Monom *>::operator[]: значение возвращается не при всех путях выполнения
+C:\Users\Nik\source\repos\Polynomial\List.h(49): warning C4715: MyList<Polynom *>::operator[]: значение возвращается не при всех путях выполнения
+C:\Users\Nik\source\repos\Polynomial\List.h(49): warning C4715: MyList<Monom *>::operator[]: значение возвращается не при всех путях выполнения
+  glad.c
+LINK : warning LNK4098: библиотека по умолчанию "MSVCRT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
   Text Editor.vcxproj -> C:\Users\Nik\source\repos\Polynomial\x64\Debug\CringeAPI.exe
